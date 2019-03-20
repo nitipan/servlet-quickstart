@@ -11,6 +11,7 @@ public class Application {
         tomcat.setBaseDir("temp");
         tomcat.setPort(8080);
 
+        // url start from http://localhost:8080/
         tomcat.addWebapp("", new File("src/main/webapp").getAbsolutePath());
         tomcat.getConnector();
         tomcat.start();

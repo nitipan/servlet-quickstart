@@ -11,10 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 public class HomeServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        ServletOutputStream outputStream = resp.getOutputStream();
-        outputStream.print("<h1>Hello world - Codecamp 3</h1>");
-        outputStream.print("<h3>This is my first servlet application</h3>");
-        outputStream.flush();
-        outputStream.close();
+        req.setAttribute("name", "Codecamp 3");
+        req.getRequestDispatcher("/jsp/home.jsp").forward(req, resp);
     }
 }
